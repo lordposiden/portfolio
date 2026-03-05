@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { personalInfo } from '../data';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 import { Link } from 'react-scroll';
+import profileImg from '../assets/profile.jpg';
 
 const Hero = () => {
     return (
@@ -19,7 +20,27 @@ const Hero = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="relative inline-block mb-8"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/30 to-blue-500/30 blur-2xl rounded-full" />
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="relative w-48 h-48 md:w-56 md:h-56 rounded-full p-2 glass border border-white/20 overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                        >
+                            <img
+                                src={profileImg}
+                                alt={personalInfo.name}
+                                className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
+                            />
+                        </motion.div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
                         className="inline-block"
                     >
                         <span className="glass px-4 py-2 rounded-full text-sm font-medium text-purple-300 border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.2)]">

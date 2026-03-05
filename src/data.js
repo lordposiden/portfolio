@@ -5,7 +5,8 @@ export const personalInfo = {
     email: "ashilroy007@depaul.edu.in",
     github: "https://github.com/lordposiden",
     linkedin: "https://linkedin.com/in/ashilroy",
-    tagline: "Building scalable backend systems, REST APIs and modern web applications."
+    tagline: "Building scalable backend systems, REST APIs and modern web applications.",
+    profileImage: "/src/assets/profile.jpg"
 };
 
 export const about = {
