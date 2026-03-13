@@ -1,11 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data';
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react';
 import { Link } from 'react-scroll';
 import profileImg from '../assets/profile.jpg';
 
 const Hero = () => {
+    const handleDownloadResume = () => {
+        // Replace with actual resume path
+        const resumeUrl = personalInfo.resume;
+        const link = document.createElement('a');
+        link.href = resumeUrl;
+        link.download = 'Ashil_Roy_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
             {/* Background elements moved to global Background component */}
@@ -85,6 +96,16 @@ const Hero = () => {
                             >
                                 View Projects
                             </Link>
+                        </motion.div>
+
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <button
+                                onClick={handleDownloadResume}
+                                className="cursor-pointer glass px-8 py-3 rounded-full font-semibold text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2 border border-white/10"
+                            >
+                                <Download className="w-4 h-4" />
+                                Download Resume
+                            </button>
                         </motion.div>
                     </div>
 

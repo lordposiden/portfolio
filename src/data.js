@@ -6,7 +6,8 @@ export const personalInfo = {
     github: "https://github.com/lordposiden",
     linkedin: "https://linkedin.com/in/ashilroy",
     tagline: "Building scalable backend systems, REST APIs and modern web applications.",
-    profileImage: "/src/assets/profile.jpg"
+    profileImage: "/src/assets/profile.jpg",
+    resume: "/resume.pdf"
 };
 
 export const about = {
